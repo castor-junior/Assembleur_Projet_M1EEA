@@ -31,7 +31,7 @@ struct SErreur
 	string message;				// Message décrivant l'erreur
 };
 
-// Information permettant de relier le code machine au fichier source
+// Information permettant de relier le code machine au fichier source, utile pour les erreurs
 struct SInfoInstruction
 {
 	int adresse;
