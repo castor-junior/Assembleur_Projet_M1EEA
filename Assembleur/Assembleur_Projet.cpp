@@ -24,7 +24,8 @@ void CAssembleur::initOpcodes()
 		{"JNZ", 0x0C},
 		{"CALL", 0x0D},
 		{"RET", 0x0E},
-		{"HALT", 0x0F}
+		{"HALT", 0x0F},
+        {"RETI", 0x10}
 	};
 }
 
@@ -109,7 +110,7 @@ bool CAssembleur::analyseLigne(string ligne, int numeroLigne)
     // Detection d'une etiquette
     size_t position = ligne.find(':');
 
-    if (position != string::npos)       // S'il une etiquette a ete detecte
+    if (position != string::npos)       // SI une etiquette a ete detecte
     {
         string etiquette = ligne.substr(0, position);       // Recuperer l'etiquette
 
@@ -374,7 +375,7 @@ void CAssembleur::afficheErreurs()
     }
 }
 
-// Affichage du code machine
+// Affichage du code machine généré en hexa
 void CAssembleur::afficheCodeMachine() 
 {
     cout << "\nCODE MACHINE\n";
